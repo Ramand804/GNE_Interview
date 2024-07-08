@@ -5,10 +5,35 @@ if(isset($_POST["submitLogin"])){
     $password=mysqli_real_escape_string($conn,$_POST["password"]);
     $sql="Select * from users where userid='$userId' and userpassword='$password'";
     $result=mysqli_query($conn, $sql);
-    if($result==NULL){
+    if($result==NULL || $result==''){
         die("Something went Wrong");
     }else{
-        require("post.php");
+        echo "login successfully";
+        header("Location: http://localhost/gne_interview/post.php");
+    }
+}
+if(isset($_POST["submitPost"])){
+    $postTitle=mysqli_real_escape_string($conn,$_POST["postTitle"]);
+    $postContent=mysqli_real_escape_string($conn,$_POST["postContent"]);
+    $postdate=mysqli_real_escape_string($conn,$_POST["postdate"]);
+        $sql="INSERT INTO posts(UserID, PostTitle, PostContent, PostDate) VALUES ('Ramand','$postTitle','$postContent','$postdate')";
+        if(mysqli_query($conn, $sql)){
+        header("Location: http://localhost/gne_interview/post.php");
+    }else{
+        die ("Something went wrong");
+    }
+}
+
+if(isset($_POST["submitEditPost"])){
+    $postTitle=mysqli_real_escape_string($conn,$_POST["postTitle"]);
+    $postContent=mysqli_real_escape_string($conn,$_POST["postContent"]);
+    $postdate=mysqli_real_escape_string($conn,$_POST["postdate"]);
+    $id=mysqli_real_escape_string($conn,$_POST["id"]);
+        $sql="update posts set PostTitle='$postTitle', PostContent='$postContent', PostDate='$postdate' where PostID='$id'";
+        if(mysqli_query($conn, $sql)){
+            header("Location: http://localhost/gne_interview/post.php");
+    }else{
+        die ("Something went wrong");
     }
 }
 
