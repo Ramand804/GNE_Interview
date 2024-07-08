@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Add New Post</title>
+</head>
+<body><br>
+    <div class="container">
+        <header class="d-flex justify-content-between my-04">
+            <h3>Add New Post</h3><br>
+        </header>
+        <form action="process.php" method="post">
+            <div class="form-element my-04">
+                <input type="text" class="form-control" name="postTitle" placeholder="Enter Post Title">
+            </div>
+            <br>
+            <div class="form-element" my-04>
+                <input type="text" class="form-control" name="postContent" placeholder="Enter Post Content">
+            </div><br>
+            <div class="form-element" my-04>
+                <input type="date" class="form-control" name="postdate" placeholder="Enter Post Date">
+            </div><br>
+            <div class="form-element" my-04>
+                <input type="submit" class="btn btn-success" name="submitPost" value="Add Post" >
+            </div>
+        </form>
+    </div>
+        
+</body>
+</html>
