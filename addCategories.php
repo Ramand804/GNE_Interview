@@ -21,7 +21,7 @@
 </div>
 </nav>
         <header class="d-flex justify-content-between my-04">
-            <h3>Add New Category</h3><br>
+            <h3><u>Add New Category</u></h3><br>
         </header>
         <form action="process.php" method="post">
             <div class="form-element my-04">
