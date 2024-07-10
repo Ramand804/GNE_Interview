@@ -37,4 +37,16 @@ if(isset($_POST["submitEditPost"])){
     }
 }
 
+if(isset($_POST["submitComment"])){
+    $PostID=mysqli_real_escape_string($conn,$_POST["PostID"]);
+    $CommentContent=mysqli_real_escape_string($conn,$_POST["CommentContent"]);
+    $CommentDate=mysqli_real_escape_string($conn,$_POST["CommentDate"]);
+        $sql="INSERT INTO comments(PostId, UserId, CommentContent, CommentDate) VALUES ('$PostID','Ramand','$CommentContent','$CommentDate')";
+        if(mysqli_query($conn, $sql)){
+        header("Location: http://localhost/gne_interview/comments.php");
+    }else{
+        die ("Something went wrong");
+    }
+}
+
 ?>
