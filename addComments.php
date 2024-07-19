@@ -25,11 +25,11 @@
         </header>
         <form action="process.php" method="post">
         <div class="form-element my-04">
-        <select class="form-control" name="PostID" placeholder="select Post Title">
+        <select class="form-control" name="Coursecode" placeholder="select Course Code">
             <option value="">--Select--</option>
         <?php
                 include("connect.php");
-                $sql="Select * from posts";
+                $sql="SELECT * FROM `course_code`";
                 $result=mysqli_query($conn,$sql);
                 $i=0;
                 while($row=mysqli_fetch_array($result)){
